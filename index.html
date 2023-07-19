@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Profile card component</title>
+
+  <style>
+    /* ============================================================================================================ */
+    /* ============================================================================================================ */
+
+    :root {
+      /* ### Primary */
+      --Dark_cyan: hsl(185, 75%, 39%);
+      --Very_dark_desaturated_blue: hsl(229, 23%, 23%);
+      --Dark_grayish_blue: hsl(227, 10%, 46%);
+
+      /* ### Neutral */
+      --Dark_gray: hsl(0, 0%, 59%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Kumbh Sans', sans-serif;
+    }
+
+    /* ============================================================================================================ */
+    /* ======================================= CSS for background ================================================= */
+    body {
+      height: 100vh;
+      width: 100vw;
+      background-color: var(--Dark_cyan);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .svg-container {
+      z-index: 1;
+      position: absolute;
+    }
+
+    .top-left {
+      top: -55%;
+      left: -10%;
+    }
+
+    .bottom-right {
+      bottom: -55%;
+      right: -10%;
+    }
+
+    /* ============================================================================================================ */
+    /* ========================================== CSS for Contanier =============================================== */
+
+    .card_contanier {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20rem;
+      z-index: 10;
+      background-color: white;
+      border-radius: 1.5rem;
+    }
+    .card_contanier_profile{
+      margin-top:4rem;
+
+    }
+
+    .bg_card_contanier {
+      width: 100%;
+      height: 10rem;
+      top: 0;
+      left: 0;
+      background-image: url(./images/bg-pattern-card.svg);
+      border-radius: 1rem 1rem 0rem 0rem;
+    }
+
+    .card_contanier_profile_image {
+      border-radius: 50%;
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 12px solid white;
+      display: inline-block;
+      height: auto;
+    }
+
+    .card_contanier_profile_image img {
+      border-radius: 50%;
+    }
+
+    .card_contanier_profile_name_span{
+      font-size: 18px;
+      margin:8px;
+    }
+    .card_contanier_person_city{
+      margin-block: 8px 26px;
+    }
+
+    .card_contanier_person_info{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2rem;
+    }
+
+
+
+    /* ============================================================================================================ */
+    /* ======================================= CSS for utaliti Classes ============================================ */
+
+    .center {
+      text-align: center;
+    }
+    .bold{
+      font-weight: 700;
+    }
+
+
+    /* ============================================================================================================ */
+  </style>
+</head>
+
+<body>
+  <!-- ============================================================================================================ -->
+  <!-- ========================================== HTML for BackGround ============================================= -->
+
+  <div class="svg-container top-left">
+    <svg width="978" height="978" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient x1="50%" y1=".779%" x2="50%" y2="100%" id="a">
+          <stop stop-color="#0989B4" stop-opacity="0" offset="0%" />
+          <stop stop-color="#53FFEE" offset="99.94%" />
+        </linearGradient>
+      </defs>
+      <ellipse fill="url(#a)" transform="rotate(-135 489 489)" cx="489" cy="489" rx="489" ry="488" fill-rule="evenodd"
+        opacity=".5" />
+    </svg>
+  </div>
+
+  <div class="svg-container bottom-right">
+    <svg width="978" height="978" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient x1="50%" y1=".779%" x2="50%" y2="100%" id="a">
+          <stop stop-color="#0989B4" stop-opacity="0" offset="0%" />
+          <stop stop-color="#53FFEE" offset="99.94%" />
+        </linearGradient>
+      </defs>
+      <ellipse fill="url(#a)" transform="scale(1 -1) rotate(45 1669.55 0)" cx="489" cy="489" rx="489" ry="488"
+        fill-rule="evenodd" opacity=".25" />
+    </svg>
+  </div>
+
+  <!-- ============================================================================================================ -->
+  <!-- ========================================== HTML for Contanier =============================================== -->
+
+  <div class="card_contanier">
+    <div class="bg_card_contanier"></div>
+    
+    <div class="card_contanier_profile_image">
+      <img src="./images/image-victor.jpg" alt="Profile Picture">
+    </div>
+
+    <div class="card_contanier_profile center">
+
+      <div class="card_contanier_profile_name center">
+        <span class="card_contanier_profile_name_span bold">Victor Crest</span>
+        <span class="card_contanier_profile_number_span">26</span>
+      </div>
+
+      <div class="card_contanier_person_city center">London</div>
+      <hr>
+      <div class="card_contanier_person_info">
+        <div class="card_contanier_person_info_followers">
+          <div class="follower_number center bold">80K</div>
+          <div class="follower_text center ">Followers</div>
+        </div>
+
+        <div class="card_contanier_person_info_likes">
+          <div class="like_number center bold">803K</div>
+          <div class="like_text center ">Likes</div>
+        </div>
+
+        <div class="card_contanier_person_info_photos">
+          <div class="photo_number center bold">1.4K</div>
+          <div class="photo_text center ">Photos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================================================================ -->
+  </div>
+</body>
+
+</html>
